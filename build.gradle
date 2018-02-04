@@ -5,13 +5,11 @@ buildscript {
         kotlin_version = '1.2.0'
         gradle_version = '3.0.1'
         constraint_layout_version = '1.0.2'
-
         appcompat_version = '26.1.0'
-
-        robolectric_version = '3.6.1'
         junit_version = '4.12'
         espresso_version = '3.0.1'
         support_test_version = '1.0.1'
+        kodein_version = '4.1.0'
     }
 
     repositories {
