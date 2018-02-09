@@ -12,8 +12,8 @@ import org.junit.BeforeClass
 @RunWith(AndroidJUnit4::class)
 class EncryptorTests {
     companion object {
-        private lateinit var encryptor:Encryptor
-        private lateinit var converter:StringsConverter
+        private lateinit var encryptor: Encryptor
+        private lateinit var converter: StringsConverter
 
         @BeforeClass
         @JvmStatic

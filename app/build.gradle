@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 26
@@ -26,7 +27,12 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$appcompat_version"
     implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
 
+    /* Kodein DI */
     implementation "com.github.salomonbrys.kodein:kodein:$kodein_version"
+
+    /* Room Db */
+    implementation "android.arch.persistence.room:runtime:$room_version"
+    kapt "android.arch.persistence.room:compiler:$room_version"
 
     /* Tests */
     testImplementation "junit:junit:$junit_version"

@@ -10,6 +10,7 @@ buildscript {
         espresso_version = '3.0.1'
         support_test_version = '1.0.1'
         kodein_version = '4.1.0'
+        room_version = '1.0.0'
     }
 
     repositories {
