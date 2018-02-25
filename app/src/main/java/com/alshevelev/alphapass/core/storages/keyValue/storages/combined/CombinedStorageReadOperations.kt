@@ -33,6 +33,9 @@ class CombinedStorageReadOperations(
         )
     }
 
+    /** Checks equality of [valueToCompare] and a stored Boolean value  */
+    override fun areEqualsBoolean(key: String, valueToCompare: Boolean): Boolean = readBoolean(key) == valueToCompare
+
     /** Read string value  */
     override fun readString(key: String): String? {
         return read(
@@ -41,6 +44,9 @@ class CombinedStorageReadOperations(
             { cacheStorageUpdate.putString(key, it) }
         )
     }
+
+    /** Checks equality of [valueToCompare] and a stored String value  */
+    override fun areEqualsString(key: String, valueToCompare: String): Boolean = readString(key) == valueToCompare
 
     /** Read float value  */
     override fun readFloat(key: String): Float? {
@@ -51,6 +57,9 @@ class CombinedStorageReadOperations(
         )
     }
 
+    /** Checks equality of [valueToCompare] and a stored Float value  */
+    override fun areEqualsFloat(key: String, valueToCompare: Float): Boolean = readFloat(key) == valueToCompare
+
     /** Read int value  */
     override fun readInt(key: String): Int? {
         return read(
@@ -60,6 +69,9 @@ class CombinedStorageReadOperations(
         )
     }
 
+    /** Checks equality of [valueToCompare] and a stored Int value  */
+    override fun areEqualsInt(key: String, valueToCompare: Int): Boolean = readInt(key) == valueToCompare
+
     /** Read long value  */
     override fun readLong(key: String): Long? {
         return read(
@@ -68,6 +80,9 @@ class CombinedStorageReadOperations(
             { cacheStorageUpdate.putLong(key, it) }
         )
     }
+
+    /** Checks equality of [valueToCompare] and a stored long value  */
+    override fun areEqualsLong(key: String, valueToCompare: Long): Boolean = readLong(key) == valueToCompare
 
     /** */
     private fun <T>read(

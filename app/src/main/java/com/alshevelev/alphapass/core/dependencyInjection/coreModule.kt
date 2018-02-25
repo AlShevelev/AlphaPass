@@ -11,6 +11,8 @@ import com.alshevelev.alphapass.core.storages.keyValue.storages.StorageOperation
 import com.alshevelev.alphapass.core.storages.keyValue.storages.combined.CombinedStorage
 import com.alshevelev.alphapass.core.storages.keyValue.storages.inMemory.InMemoryStorage
 import com.alshevelev.alphapass.core.storages.keyValue.storages.sharedPreferences.SharedPreferencesStorage
+import com.alshevelev.alphapass.core.utility.appResources.AppResourcesFacade
+import com.alshevelev.alphapass.core.utility.appResources.AppResourcesFacadeInterface
 import com.alshevelev.alphapass.core.utility.encryption.Encryptor
 import com.alshevelev.alphapass.core.utility.encryption.EncryptorInterface
 import com.alshevelev.alphapass.core.utility.stringsConverter.StringsConverter
@@ -35,4 +37,6 @@ val coreModule = Kodein.Module {
     bind<StringsConverterInterface>() with singleton { StringsConverter() }
 
     bind<DbRunInterface>() with singleton { Room.databaseBuilder(App.context!!, Db::class.java, "alphapass.db").build() }
+
+    bind<AppResourcesFacadeInterface>() with singleton { AppResourcesFacade() }
 }

@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.alshevelev.alphapass">
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
     <application
         android:name=".app.App"
         android:allowBackup="false"
@@ -10,12 +15,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.MainActivity">
+        <activity android:name="com.alshevelev.alphapass.presentation.screens.rootScreen.RootScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.alshevelev.alphapass.presentation.screens.createPasswordScreen.view.CreatePasswordScreenActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/create_password_screen_header">
+        </activity>
+        <activity
+            android:name="com.alshevelev.alphapass.presentation.screens.enterPasswordScreen.EnterPasswordScreenActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/enter_password_screen_header">
+        </activity>
+        <activity
+            android:name="com.alshevelev.alphapass.presentation.screens.groupsListScreen.GroupsListScreenActivity"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

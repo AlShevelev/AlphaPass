@@ -1,0 +1,9 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="create_password_screen_top_margin">64dp</dimen>
+
+    <dimen name="enter_password_screen_top_margin">@dimen/create_password_screen_top_margin</dimen>
+</resources>

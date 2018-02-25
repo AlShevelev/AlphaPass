@@ -6,11 +6,20 @@ buildscript {
         gradle_version = '3.0.1'
         constraint_layout_version = '1.0.2'
         appcompat_version = '26.1.0'
+
         junit_version = '4.12'
         espresso_version = '3.0.1'
         support_test_version = '1.0.1'
+
         kodein_version = '4.1.0'
+
         room_version = '1.0.0'
+
+        mosby_version = '3.0.4'
+
+        rxjava_version = '2.1.2'
+        rxjava_android_version = '2.0.1'
+        rxbinding_version = '2.0.0'
     }
 
     repositories {

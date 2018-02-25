@@ -16,17 +16,32 @@ class InMemoryStorageOperations(private val storage: MutableMap<String, Any>):
     /** Read boolean value  */
     override fun readBoolean(key: String): Boolean? = storage[key]?.let{ it as Boolean}
 
+    /** Checks equality of [valueToCompare] and a stored Boolean value  */
+    override fun areEqualsBoolean(key: String, valueToCompare: Boolean): Boolean = readBoolean(key) == valueToCompare
+
     /** Read string value  */
     override fun readString(key: String): String? = storage[key]?.let{ it as String}
+
+    /** Checks equality of [valueToCompare] and a stored String value  */
+    override fun areEqualsString(key: String, valueToCompare: String): Boolean = readString(key) == valueToCompare
 
     /** Read float value  */
     override fun readFloat(key: String): Float? = storage[key]?.let{ it as Float}
 
+    /** Checks equality of [valueToCompare] and a stored Float value  */
+    override fun areEqualsFloat(key: String, valueToCompare: Float): Boolean = readFloat(key) == valueToCompare
+
     /** Read int value  */
     override fun readInt(key: String): Int? = storage[key]?.let{ it as Int}
 
+    /** Checks equality of [valueToCompare] and a stored Int value  */
+    override fun areEqualsInt(key: String, valueToCompare: Int): Boolean = readInt(key) == valueToCompare
+
     /** Read long value  */
     override fun readLong(key: String): Long? = storage[key]?.let{ it as Long}
+
+    /** Checks equality of [valueToCompare] and a stored long value  */
+    override fun areEqualsLong(key: String, valueToCompare: Long): Boolean = readLong(key) == valueToCompare
     //endregion
 
     //region StorageCommitOperationsInterface members

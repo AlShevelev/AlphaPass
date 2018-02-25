@@ -23,19 +23,36 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    /* Kotlin */
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
     implementation "com.android.support:appcompat-v7:$appcompat_version"
     implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
 
     /* Kodein DI */
-    implementation "com.github.salomonbrys.kodein:kodein:$kodein_version"
+    compile "com.github.salomonbrys.kodein:kodein:$kodein_version"
+    compile "com.github.salomonbrys.kodein:kodein-android:$kodein_version"
 
     /* Room Db */
     implementation "android.arch.persistence.room:runtime:$room_version"
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     kapt "android.arch.persistence.room:compiler:$room_version"
 
     /* Tests */
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "com.android.support.test:runner:$support_test_version"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_version"
+
+    /* Mosby */
+    compile "com.hannesdorfmann.mosby3:mvi:$mosby_version"
+
+    /* Rx */
+    compile "io.reactivex.rxjava2:rxjava:$rxjava_version"
+    compile "io.reactivex.rxjava2:rxandroid:$rxjava_android_version"
+    compile "com.jakewharton.rxbinding2:rxbinding:$rxbinding_version"
+    compile "com.jakewharton.rxbinding2:rxbinding-support-v4:$rxbinding_version"
+    compile "com.jakewharton.rxbinding2:rxbinding-design:$rxbinding_version"
 }
