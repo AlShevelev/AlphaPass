@@ -1,6 +1,5 @@
 package com.alshevelev.alphapass.presentation.screens.createPasswordScreen.presenter
 
-import android.content.Context
 import com.alshevelev.alphapass.R
 import com.alshevelev.alphapass.presentation.screens.createPasswordScreen.interactor.CreatePasswordScreenInteractorInterface
 import com.alshevelev.alphapass.presentation.screens.createPasswordScreen.view.CreatePasswordScreenActivity
@@ -30,7 +29,7 @@ class CreatePasswordScreenPresenter(override val kodein: Kodein):
 
     /** */
     override fun bindIntents() {
-        val onClickObservable = intent(CreatePasswordScreenActivityInterface::onButtonClickIntent).
+        val onClickObservable = intent(CreatePasswordScreenActivityInterface::onCreateButtonClickIntent).
             subscribeOn(Schedulers.io()).
             flatMap { interactor.processPassword(it) }.
             onErrorReturn { ErrorViewState(R.string.create_password_screen_error_common) }.

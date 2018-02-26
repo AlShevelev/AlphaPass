@@ -7,7 +7,7 @@ import com.alshevelev.alphapass.R
 import com.alshevelev.alphapass.app.App
 import com.alshevelev.alphapass.core.storages.keyValue.KeyValueStorageFacadeInterface
 import com.alshevelev.alphapass.presentation.screens.createPasswordScreen.view.CreatePasswordScreenActivity
-import com.alshevelev.alphapass.presentation.screens.enterPasswordScreen.EnterPasswordScreenActivity
+import com.alshevelev.alphapass.presentation.screens.enterPasswordScreen.view.EnterPasswordScreenActivity
 import com.github.salomonbrys.kodein.instance
 
 class RootScreenActivity: AppCompatActivity() {

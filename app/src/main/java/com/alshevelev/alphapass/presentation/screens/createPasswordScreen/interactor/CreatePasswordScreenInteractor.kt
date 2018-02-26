@@ -26,11 +26,12 @@ class CreatePasswordScreenInteractor(override val kodein: Kodein): CreatePasswor
                 ErrorViewState(R.string.create_password_screen_error_too_shot)
             }
             else {
-                val passAsBytesBin = stringsConverter.toBytes(password)
-                val encryptedPass = encryptor.encryptByInternalKey(passAsBytesBin)!!
-                keyValueStorage.writeOrUpdatePassword(stringsConverter.toBase64(encryptedPass))
+                keyValueStorage.writeOrUpdatePassword(preparePassToWrite(password))
 
                 SuccessViewState()
             }
         }
+
+    private fun preparePassToWrite(password: String): String =
+        stringsConverter.toBase64(encryptor.encryptByInternalKey(stringsConverter.toBytes(password))!!)
 }

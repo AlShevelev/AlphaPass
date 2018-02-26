@@ -16,4 +16,6 @@
     <string name="enter_password_screen_invitation">@string/create_password_screen_invitation</string>
     <string name="enter_password_screen_note1">@string/create_password_screen_note1</string>
     <string name="enter_password_screen_note2">@string/create_password_screen_note2</string>
+    <string name="enter_password_screen_error_invalid_pass">Invalid password</string>
+    <string name="enter_password_screen_error_common">Can\'t validate password</string>
 </resources>

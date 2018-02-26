@@ -7,7 +7,7 @@ import io.reactivex.Observable
 /** */
 interface CreatePasswordScreenActivityInterface: MvpView {
     /** argument - password string */
-    fun onButtonClickIntent(): Observable<String>
+    fun onCreateButtonClickIntent(): Observable<String>
 
     /** */
     fun render(viewState: CreatePasswordScreenViewState);
