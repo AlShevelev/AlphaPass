@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.screens.groupsListScreen.GroupsListScreenActivity">
+    tools:context="com.alshevelev.alphapass.presentation.screens.groupsListScreen.view.GroupsListScreenActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/groups_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        />
+
+    <com.alshevelev.alphapass.presentation.screens.groupsListScreen.view.floatingButtonsMenu.MenuMainButton
+        android:id="@+id/start_menu_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_menu_margin"
+        app:layout_behavior="com.alshevelev.alphapass.presentation.screens.groupsListScreen.view.floatingButtonsMenu.ScrollMenuBehaviour"
+        app:srcCompat="@android:drawable/ic_menu_help"
+        app:fabSize="normal"
+        app:menu_items_tags = "search_fab;add_fab;tools_fab"
+        android:tag="start_menu_fab"
+        />
+
+    <include layout="@layout/groups_list_screen_floating_menu" />
+
+</android.support.design.widget.CoordinatorLayout>

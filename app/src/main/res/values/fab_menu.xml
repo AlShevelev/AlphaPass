@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_menu_margin">16dp</dimen>
+
+    <integer name="fab_menu_rotation_duration">250</integer>
+    <integer name="fab_menu_translation_duration">500</integer>
+    <integer name="fab_menu_alpha_duration">750</integer>
+
+    <!-- Add button -->
+    <fraction name="fab_add_x_translation">170%</fraction>
+    <fraction name="fab_add_y_translation">170%</fraction>
+
+    <!-- Search button -->
+    <fraction name="fab_search_x_translation">25%</fraction>
+    <fraction name="fab_search_y_translation">200%</fraction>
+
+    <!-- Tool button -->
+    <fraction name="fab_tools_x_translation">200%</fraction>
+    <fraction name="fab_tools_y_translation">25%</fraction>
+</resources>

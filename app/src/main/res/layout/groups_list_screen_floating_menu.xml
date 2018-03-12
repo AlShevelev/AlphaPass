@@ -1,0 +1,62 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <com.alshevelev.alphapass.presentation.screens.groupsListScreen.view.floatingButtonsMenu.MenuItemButton
+        android:id="@+id/search_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_menu_margin"
+        android:src="@android:drawable/ic_menu_search"
+        android:visibility="invisible"
+        app:backgroundTint="@color/common_fab_menu_item"
+
+        android:tag="search_fab"
+        app:fabSize="mini"
+
+        app:x_translation = "@fraction/fab_search_x_translation"
+        app:y_translation = "@fraction/fab_search_y_translation"
+        app:show_animation = "@anim/search_fab_show"
+        app:main_menu_button_tag = "start_menu_fab"
+        />
+
+    <com.alshevelev.alphapass.presentation.screens.groupsListScreen.view.floatingButtonsMenu.MenuItemButton
+        android:id="@+id/add_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_menu_margin"
+        android:src="@android:drawable/ic_menu_add"
+        android:visibility="invisible"
+        app:backgroundTint="@color/common_fab_menu_item"
+
+        android:tag="add_fab"
+        app:fabSize="mini"
+
+        app:x_translation = "@fraction/fab_add_x_translation"
+        app:y_translation = "@fraction/fab_add_y_translation"
+        app:show_animation = "@anim/add_fab_show"
+        app:main_menu_button_tag = "start_menu_fab"
+        />
+
+    <com.alshevelev.alphapass.presentation.screens.groupsListScreen.view.floatingButtonsMenu.MenuItemButton
+        android:id="@+id/tools_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_menu_margin"
+        android:src="@android:drawable/ic_menu_manage"
+        android:visibility="invisible"
+        app:backgroundTint="@color/common_fab_menu_item"
+
+        android:tag="tools_fab"
+        app:fabSize="mini"
+
+        app:x_translation = "@fraction/fab_tools_x_translation"
+        app:y_translation = "@fraction/fab_tools_y_translation"
+        app:show_animation = "@anim/tools_fab_show"
+        app:main_menu_button_tag = "start_menu_fab"
+        />
+</FrameLayout>

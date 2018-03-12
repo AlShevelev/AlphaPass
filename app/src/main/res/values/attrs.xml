@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="floating_button_menu_item">
+        <attr name="x_translation" format="reference|fraction" />
+        <attr name="y_translation" format="reference|fraction" />
+        <attr name="show_animation" format="reference" />
+        <attr name="main_menu_button_tag" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="floating_button_menu">
+        <attr name="menu_items_tags" format="string" />
+    </declare-styleable>
+</resources>

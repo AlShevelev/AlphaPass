@@ -4,15 +4,15 @@ import android.arch.persistence.room.Room
 import com.alshevelev.alphapass.app.App
 import com.alshevelev.alphapass.core.storages.db.database.Db
 import com.alshevelev.alphapass.core.storages.db.database.DbRunInterface
-import com.alshevelev.alphapass.core.storages.keyValue.KeyValueStorageFacade
-import com.alshevelev.alphapass.core.storages.keyValue.KeyValueStorageFacadeInterface
+import com.alshevelev.alphapass.core.storages.keyValue.KeyValueStorage
+import com.alshevelev.alphapass.core.storages.keyValue.KeyValueStorageInterface
 import com.alshevelev.alphapass.core.storages.keyValue.storages.StorageInterface
 import com.alshevelev.alphapass.core.storages.keyValue.storages.StorageOperationsInstanceInterface
 import com.alshevelev.alphapass.core.storages.keyValue.storages.combined.CombinedStorage
 import com.alshevelev.alphapass.core.storages.keyValue.storages.inMemory.InMemoryStorage
 import com.alshevelev.alphapass.core.storages.keyValue.storages.sharedPreferences.SharedPreferencesStorage
-import com.alshevelev.alphapass.core.utility.appResources.AppResourcesFacade
-import com.alshevelev.alphapass.core.utility.appResources.AppResourcesFacadeInterface
+import com.alshevelev.alphapass.core.utility.appResources.AppResources
+import com.alshevelev.alphapass.core.utility.appResources.AppResourcesInterface
 import com.alshevelev.alphapass.core.utility.encryption.Encryptor
 import com.alshevelev.alphapass.core.utility.encryption.EncryptorInterface
 import com.alshevelev.alphapass.core.utility.stringsConverter.StringsConverter
@@ -29,7 +29,7 @@ val coreModule = Kodein.Module {
 
     bind<StorageInterface>() with singleton { CombinedStorage(App.injections!!) }
 
-    bind<KeyValueStorageFacadeInterface>() with singleton { KeyValueStorageFacade(App.injections!!) }
+    bind<KeyValueStorageInterface>() with singleton { KeyValueStorage(App.injections!!) }
     //endregion
 
     bind<EncryptorInterface>() with singleton { Encryptor() }
@@ -38,5 +38,5 @@ val coreModule = Kodein.Module {
 
     bind<DbRunInterface>() with singleton { Room.databaseBuilder(App.context!!, Db::class.java, "alphapass.db").build() }
 
-    bind<AppResourcesFacadeInterface>() with singleton { AppResourcesFacade() }
+    bind<AppResourcesInterface>() with singleton { AppResources() }
 }

@@ -1,7 +1,7 @@
 package com.alshevelev.alphapass.core.storages.keyValue
 
-/** Interface for KeyValueStorageFacade  */
-interface KeyValueStorageFacadeInterface {
+/** Interface for KeyValueStorage  */
+interface KeyValueStorageInterface {
 
     /** */
     fun isPasswordExists(): Boolean

@@ -13,4 +13,5 @@ data class AccountsGroup(
     var groupName: String,
 
     @ColumnInfo(name = "icon_id")
-    var iconId: Int?)
+    var iconId: Int?
+)

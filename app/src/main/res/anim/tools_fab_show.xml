@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true">
+
+    <!-- Rotate -->
+    <rotate
+        android:duration="@integer/fab_menu_rotation_duration"
+        android:fromDegrees="30"
+        android:interpolator="@android:anim/linear_interpolator"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:repeatCount="4"
+        android:repeatMode="reverse"
+        android:toDegrees="0" />
+
+    <!--Move-->
+    <translate
+        android:duration="@integer/fab_menu_translation_duration"
+        android:fromXDelta="@fraction/fab_tools_x_translation"
+        android:fromYDelta="@fraction/fab_tools_y_translation"
+        android:interpolator="@android:anim/linear_interpolator"
+        android:toXDelta="0%"
+        android:toYDelta="0%" />
+
+    <!--Fade In-->
+    <alpha
+        android:duration="@integer/fab_menu_alpha_duration"
+        android:fromAlpha="0.0"
+        android:interpolator="@android:anim/decelerate_interpolator"
+        android:toAlpha="1.0" />
+
+</set>

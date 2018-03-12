@@ -18,4 +18,5 @@
     <string name="enter_password_screen_note2">@string/create_password_screen_note2</string>
     <string name="enter_password_screen_error_invalid_pass">Invalid password</string>
     <string name="enter_password_screen_error_common">Can\'t validate password</string>
+    <string name="title_activity_groups_list_screen">GroupsListScreenActivity</string>
 </resources>

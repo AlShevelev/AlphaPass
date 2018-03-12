@@ -1,9 +1,10 @@
 package com.alshevelev.alphapass.core.utility.appResources
 
 import android.support.annotation.*
+import android.view.animation.Animation
 
-/** Interface for AppResourcesFacade  */
-interface AppResourcesFacadeInterface {
+/** Interface for AppResources  */
+interface AppResourcesInterface {
     /** Get color from resources  */
     fun getColor(@ColorRes resId: Int): Int
 
@@ -27,4 +28,10 @@ interface AppResourcesFacadeInterface {
 
     /** Get dimension value in [px]  */
     fun getDimension(@DimenRes resId: Int) : Float
+
+    /** Get animation */
+    fun getAnimation(@AnimRes resId: Int) : Animation
+
+    /** Get fraction */
+    fun getFraction(@FractionRes resId: Int, base: Int) : Float
 }

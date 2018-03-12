@@ -1,18 +1,19 @@
 package com.alshevelev.alphapass.core.utility.appResources
 
-import android.content.Context
 import android.support.annotation.ArrayRes
 import android.support.annotation.BoolRes
 import android.support.annotation.ColorRes
 import android.support.annotation.StringRes
 import android.support.v4.content.res.ResourcesCompat
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import com.alshevelev.alphapass.R
 import com.alshevelev.alphapass.app.App
 import java.text.MessageFormat
 
 /** Service for providing application resources from resources files  */
-class AppResourcesFacade: AppResourcesFacadeInterface {
-    //region AppResourcesFacadeInterface methods
+class AppResources: AppResourcesInterface {
+    //region AppResourcesInterface methods
     /** Get color from resources  */
     override fun getColor(@ColorRes resId: Int): Int = ResourcesCompat.getColor(App.context!!.resources, resId, null)
 
@@ -36,5 +37,11 @@ class AppResourcesFacade: AppResourcesFacadeInterface {
 
     /** Get dimension value in [px]  */
     override fun getDimension(resId: Int): Float = App.context!!.resources.getDimension(resId)
+
+    /** Get animation */
+    override fun getAnimation(resId: Int): Animation = AnimationUtils.loadAnimation(App.context!!, resId)
+
+    /** Get fraction */
+    override fun getFraction(resId: Int, base: Int): Float = App.context!!.resources.getFraction(resId, base, base)
     //endregion
 }

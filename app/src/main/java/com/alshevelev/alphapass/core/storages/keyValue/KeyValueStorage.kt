@@ -6,7 +6,7 @@ import com.github.salomonbrys.kodein.KodeinAware
 import com.github.salomonbrys.kodein.instance
 
 /** Helper class for access to App-level private shared preferences  */
-class KeyValueStorageFacade(override val kodein: Kodein): KeyValueStorageFacadeInterface, KodeinAware {
+class KeyValueStorage(override val kodein: Kodein): KeyValueStorageInterface, KodeinAware {
 
     private val keyValueStorage: StorageInterface = instance()
 

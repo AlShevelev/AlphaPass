@@ -1,7 +1,7 @@
 package com.alshevelev.alphapass.presentation.screens.createPasswordScreen.interactor
 
 import com.alshevelev.alphapass.R
-import com.alshevelev.alphapass.core.storages.keyValue.KeyValueStorageFacadeInterface
+import com.alshevelev.alphapass.core.storages.keyValue.KeyValueStorageInterface
 import com.alshevelev.alphapass.core.utility.encryption.EncryptorInterface
 import com.alshevelev.alphapass.core.utility.stringsConverter.StringsConverterInterface
 import com.alshevelev.alphapass.presentation.screens.createPasswordScreen.viewState.CreatePasswordScreenViewState
@@ -17,7 +17,7 @@ class CreatePasswordScreenInteractor(override val kodein: Kodein): CreatePasswor
 
     private val stringsConverter: StringsConverterInterface = instance()
     private val encryptor: EncryptorInterface = instance()
-    private val keyValueStorage: KeyValueStorageFacadeInterface = instance()
+    private val keyValueStorage: KeyValueStorageInterface = instance()
 
     /** */
     override fun processPassword(password: String): Observable<CreatePasswordScreenViewState> =

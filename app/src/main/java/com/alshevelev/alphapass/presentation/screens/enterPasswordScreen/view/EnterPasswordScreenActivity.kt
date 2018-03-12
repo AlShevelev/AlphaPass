@@ -7,12 +7,12 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import com.alshevelev.alphapass.R
 import com.alshevelev.alphapass.app.App
-import com.alshevelev.alphapass.core.utility.appResources.AppResourcesFacadeInterface
+import com.alshevelev.alphapass.core.utility.appResources.AppResourcesInterface
 import com.alshevelev.alphapass.presentation.screens.enterPasswordScreen.presenter.EnterPasswordScreenPresenter
 import com.alshevelev.alphapass.presentation.screens.enterPasswordScreen.viewState.EnterPasswordScreenViewState
 import com.alshevelev.alphapass.presentation.screens.enterPasswordScreen.viewState.ErrorViewState
 import com.alshevelev.alphapass.presentation.screens.enterPasswordScreen.viewState.SuccessViewState
-import com.alshevelev.alphapass.presentation.screens.groupsListScreen.GroupsListScreenActivity
+import com.alshevelev.alphapass.presentation.screens.groupsListScreen.view.GroupsListScreenActivity
 import com.github.salomonbrys.kodein.KodeinInjector
 import com.github.salomonbrys.kodein.instance
 import com.github.salomonbrys.kodein.with
@@ -25,7 +25,7 @@ class EnterPasswordScreenActivity: MviActivity<EnterPasswordScreenActivityInterf
     EnterPasswordScreenActivityInterface {
 
     private val injector = KodeinInjector()
-    private val appResources: AppResourcesFacadeInterface by injector.instance()
+    private val appResources: AppResourcesInterface by injector.instance()
     private val presenter: EnterPasswordScreenPresenter by injector.with(this).instance()
 
     /** */

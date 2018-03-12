@@ -7,6 +7,9 @@ import com.alshevelev.alphapass.presentation.screens.createPasswordScreen.presen
 import com.alshevelev.alphapass.presentation.screens.enterPasswordScreen.interactor.EnterPasswordScreenInteractor
 import com.alshevelev.alphapass.presentation.screens.enterPasswordScreen.interactor.EnterPasswordScreenInteractorInterface
 import com.alshevelev.alphapass.presentation.screens.enterPasswordScreen.presenter.EnterPasswordScreenPresenter
+import com.alshevelev.alphapass.presentation.screens.groupsListScreen.interactor.GroupsListScreenInteractor
+import com.alshevelev.alphapass.presentation.screens.groupsListScreen.interactor.GroupsListScreenInteractorInterface
+import com.alshevelev.alphapass.presentation.screens.groupsListScreen.presenter.GroupsListScreenPresenter
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.android.androidActivityScope
 import com.github.salomonbrys.kodein.bind
@@ -31,6 +34,16 @@ val presentationModule = Kodein.Module {
 
     bind<EnterPasswordScreenInteractorInterface>() with scopedSingleton(androidActivityScope) {
         EnterPasswordScreenInteractor(App.injections!!)
+    }
+    //endregion
+
+    //region GroupsListScreen
+    bind<GroupsListScreenPresenter>() with scopedSingleton(androidActivityScope) {
+        GroupsListScreenPresenter(App.injections!!)
+    }
+
+    bind<GroupsListScreenInteractorInterface>() with scopedSingleton(androidActivityScope) {
+        GroupsListScreenInteractor(App.injections!!)
     }
     //endregion
 }

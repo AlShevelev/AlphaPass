@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="common_text_error">#e70000</color>
+
+    <color name="common_fab_menu_item">#00a6ff</color>
 </resources>
