@@ -4,6 +4,7 @@ import android.content.Context
 import android.support.design.widget.FloatingActionButton
 import android.util.AttributeSet
 import android.support.design.widget.CoordinatorLayout
+import android.util.Log
 import android.view.View
 
 /** Hide button while user scrolls the list */
@@ -19,7 +20,10 @@ class ScrollMenuBehaviour(context: Context, attrs: AttributeSet):
         axes: Int,
         type: Int): Boolean {
 
+        Log.d("MenuBehaviour", "onStartNestedScroll")
+
         if (child.visibility == View.VISIBLE) {
+            Log.d("MenuBehaviour", "onStartNestedScroll - hide")
             child.hide()
             (child as MenuMainButton).setItemsVisibility(false)
         }
@@ -29,10 +33,12 @@ class ScrollMenuBehaviour(context: Context, attrs: AttributeSet):
 
     /** */
     override fun onStopNestedScroll(coordinatorLayout: CoordinatorLayout, child: FloatingActionButton, target: View, type: Int) {
-
         super.onStopNestedScroll(coordinatorLayout, child, target, type)
 
-        if (child.visibility == View.INVISIBLE) {
+        Log.d("MenuBehaviour", "onStopNestedScroll")
+
+        if (child.visibility != View.VISIBLE) {
+            Log.d("MenuBehaviour", "onStopNestedScroll - show")
             child.show()
         }
     }

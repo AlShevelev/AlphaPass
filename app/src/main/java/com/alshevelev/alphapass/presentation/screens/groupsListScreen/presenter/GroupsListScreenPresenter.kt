@@ -26,7 +26,6 @@ class GroupsListScreenPresenter(override val kodein: Kodein):
     /** */
     override fun attachView(view: GroupsListScreenActivityInterface) {
         interactor = kodein.with(view as GroupsListScreenActivity).instance()
-        Log.d("MVI_FACK", "interactor injected")
 
         super.attachView(view)
     }
@@ -36,17 +35,14 @@ class GroupsListScreenPresenter(override val kodein: Kodein):
         val onLoadDataOnStartObservable = intent(GroupsListScreenActivityInterface::loadDataOnStart).
             subscribeOn(Schedulers.io()).
             flatMap {
-                Log.d("MVI_FACK", "getAllGroups()")
                 interactor.getAllGroups()
             }.
             map {
-                Log.d("MVI_FACK", "ListWithGroupsViewState(it): ${it.size}")
                 ListWithGroupsViewState(it) as GroupsListScreenViewState
             }.
             onErrorReturn { ErrorViewState() }.
             observeOn(AndroidSchedulers.mainThread())
 
-        Log.d("MVI_FACK", "subscribeViewState")
         subscribeViewState(onLoadDataOnStartObservable, GroupsListScreenActivityInterface::render)
     }
 }

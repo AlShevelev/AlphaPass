@@ -11,7 +11,7 @@ class GroupsListScreenInteractor(override val kodein: Kodein): GroupsListScreenI
     /** */
     override fun getAllGroups(): Observable<List<AccountsGroup>> =
         Observable.fromCallable {
-            listOf(
+            listOf<AccountsGroup>(
                 AccountsGroup(1, "group 1", null),
                 AccountsGroup(2, "group 2", null),
                 AccountsGroup(3, "group 3", null),
