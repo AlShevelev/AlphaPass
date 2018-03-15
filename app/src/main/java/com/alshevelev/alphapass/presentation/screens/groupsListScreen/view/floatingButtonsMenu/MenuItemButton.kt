@@ -35,8 +35,6 @@ class MenuItemButton(context: Context, attrs: AttributeSet?, defStyle: Int):
         injector.inject(App.injections!!)
 
         processAttributes(attrs, defStyle)
-
-        setOnClickListener { mainMenuButton?.setItemsVisibility(false) }
     }
 
     /** */
@@ -88,6 +86,12 @@ class MenuItemButton(context: Context, attrs: AttributeSet?, defStyle: Int):
                 visibility = View.INVISIBLE
             }
         })
+    }
+
+    /** */
+    override fun performClick(): Boolean {
+        mainMenuButton?.setItemsVisibility(false)
+        return super.performClick()
     }
 
     /** */

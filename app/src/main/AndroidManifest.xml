@@ -36,6 +36,11 @@
             android:name=".presentation.screens.groupsListScreen.view.GroupsListScreenActivity"
             android:screenOrientation="portrait">
         </activity>
+        <activity
+            android:name=".presentation.screens.addGroupScreen.AddGroupScreenActivity"
+            android:label="@string/add_group_screen_header"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

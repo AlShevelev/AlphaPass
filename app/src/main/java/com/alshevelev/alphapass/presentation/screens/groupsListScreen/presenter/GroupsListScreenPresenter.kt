@@ -9,6 +9,7 @@ import com.alshevelev.alphapass.presentation.screens.groupsListScreen.view.Group
 import com.alshevelev.alphapass.presentation.screens.groupsListScreen.viewState.ErrorViewState
 import com.alshevelev.alphapass.presentation.screens.groupsListScreen.viewState.GroupsListScreenViewState
 import com.alshevelev.alphapass.presentation.screens.groupsListScreen.viewState.ListWithGroupsViewState
+import com.alshevelev.alphapass.presentation.screens.groupsListScreen.viewState.MoveToAddGroupViewState
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.KodeinAware
 import com.github.salomonbrys.kodein.instance
@@ -16,6 +17,7 @@ import com.github.salomonbrys.kodein.with
 import com.hannesdorfmann.mosby3.mvi.MviBasePresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import java.util.*
 
 class GroupsListScreenPresenter(override val kodein: Kodein):
     MviBasePresenter<GroupsListScreenActivityInterface, GroupsListScreenViewState>(),
@@ -43,6 +45,14 @@ class GroupsListScreenPresenter(override val kodein: Kodein):
             onErrorReturn { ErrorViewState() }.
             observeOn(AndroidSchedulers.mainThread())
 
-        subscribeViewState(onLoadDataOnStartObservable, GroupsListScreenActivityInterface::render)
+        val onAddGroupMenuButtonClickObservable = intent(GroupsListScreenActivityInterface::onAddGroupMenuButtonClickIntent).
+            map {
+                MoveToAddGroupViewState()
+            }
+
+        val allIntents = onLoadDataOnStartObservable.
+            mergeWith(onAddGroupMenuButtonClickObservable)
+
+        subscribeViewState(allIntents, GroupsListScreenActivityInterface::render)
     }
 }
